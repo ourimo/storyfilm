@@ -5,9 +5,10 @@ const mongoose = require('mongoose');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const URL = process.env.MONGOLAB_URI || 'mongodb://localhost/storyfilm';
 
 // connect to mongodb
-mongoose.connect('mongodb://localhost/storyfilm');
+mongoose.connect(URL);
 mongoose.Promise = global.Promise;
 
 app.use(express.static(path.resolve(__dirname, './client/build')));
