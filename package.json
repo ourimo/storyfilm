@@ -1,0 +1,19 @@
+{
+  "name": "storyfilm",
+  "version": "1.0.0",
+  "description": "MERN stack app",
+  "scripts": {
+    "start": "node index",
+    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "author": "Aurimas Paliukaitis",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.13"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}
