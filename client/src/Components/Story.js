@@ -34,7 +34,6 @@ class Story extends Component {
   
   addUrlDots(){
     let url = this.props.story.url;
-    let content = this.props.story.content;
     let dots = this.refs.dots;
     
     if (url !== ''){
@@ -68,7 +67,7 @@ class Story extends Component {
             <div ref="likeCount">{this.props.story.like}</div>
           </div>
         </div>
-        <p>
+        <p className="story_content">
           {this.props.story.content}
           <a ref="dots" className="dots" href={this.props.story.url}>...</a>
         </p>

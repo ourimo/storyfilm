@@ -160,6 +160,9 @@ ul {
 .likeCount-active {
     color: #ADEEEC;
 }
+.story_content {
+    white-space: pre-wrap;
+}
 .dots {
     display: inline-block;
     font-size: 4rem;
