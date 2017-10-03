@@ -1,7 +1,7 @@
-///STORYFILM///
-
-MERN stack application of short stories worth film.
+STORYFILM
 ---------------
+MERN stack application of short stories worth film.
+
 
 For this app I've used MEAN stack. Only instead of Angular I built client on React. App uses REST api for CRUD operations.
 
