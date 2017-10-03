@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	
+	<symbol viewBox="0 0 24 24" id="trash">
+		<title>Trash bin</title>
+        <path d="M21 6l-3 18h-12l-3-18h2.028l2.666 16h8.611l2.666-16h2.029zm-4.711-4c-.9 0-1.631-1.099-1.631-2h-5.316c0 .901-.73 2-1.631 2h-5.711v2h20v-2h-5.711z"/>
+    </symbol>
+	
+	<symbol viewBox="1651 397.5 24.8 24.8" id="plus">
+		<title>Plus</title>
+        <path d="M0,0V24.8" transform="translate(1663.4 397.5)"/>
+        <path d="M0,0V24.8" transform="translate(1675.8 409.9) rotate(90)"/>
+	</symbol>
+
+    <symbol viewBox="1521.147 399.146 21.306 11.007" id="chevron">
+		<title>Chevron</title>
+        <g transform="translate(1426 -12)">
+            <path d="M10.3,0,20.6,10.3Zm0,0L0,10.3Z" transform="translate(95.5 411.5)"/>
+        </g>
+	</symbol>
+
+</svg>

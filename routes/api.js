@@ -5,8 +5,10 @@ const Story = require('../models/story');
 
 // get a list of stories from the db
 router.get('/stories', function(req, res, next){
-    Story.find({}).then(function(stories){
-        res.send(stories);
+    Story.find({})
+        .sort({createdAt: 'desc'})
+        .then(function(stories){
+            res.send(stories);
     });
 });
 
