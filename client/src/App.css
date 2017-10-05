@@ -57,25 +57,10 @@ ul {
 /*////////////////////*/
 
 /*App*/
-@media (max-width: 1000px){
-    .App {
-        width: 100%;
-        max-width: 500px;
-        margin: 0 auto;
-    }
-}
-@media (min-width: 1001px){
-    .App {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-}
-
-/*Header*/
-@media (min-width: 1001px){
-    .layout-header {
-        grid-column: 1/5;
-    }
+.App {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 
@@ -112,11 +97,6 @@ ul {
     max-width: 500px;
     margin: 40px auto 0 auto;
     padding-bottom: 80px;
-}
-@media (min-width: 1001px){
-    .Stories {
-        grid-column: 2/4;
-    }
 }
 @media (min-width: 1301px){
     .Stories {
@@ -172,77 +152,48 @@ ul {
 }
 
 /*AddStory*/
-@media (max-width: 1000px){
-    .AddStory {
-        height: 50px;
-        width: 70px;
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        padding: 20px;
-        background: #ADEEEC;
-        border-radius: 30px 0 0 0;
-        transition: all 0.5s;
-    }
+.AddStory {
+    height: 50px;
+    width: 70px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    background: #ADEEEC;
+    border-radius: 30px 0 0 0;
+    transition: height 0.5s,
+                width 0.5s,
+                background 0.5s;
 }
 @media (max-width: 500px){
     .AddStory {
         padding: 15px;
     }
 }
-@media (min-width: 1001px){
-    .AddStory {
-        grid-column: 1/2;
-        margin-top: 50px;
-        transition: all 0.5s;
-    }
-}
 
 .AddStory_intro {
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 .AddStory_intro>h3 {
     font-weight: normal;
+    font-size: 0.8rem;
+    margin-top: 5px;
 }
 .AddStory_intro>svg:hover {
     cursor: pointer;
 }
-
-@media (max-width: 1000px){
-    .AddStory_intro {
-        flex-direction: column;
-    }
-    .AddStory_intro>h3 {
-        font-size: 0.8rem;
-        margin-top: 5px;
-    }
+.AddStory-active {
+    width: calc(100% - 40px);
+    height: 80vh;
+    background: #ECE9E6;
+    background: linear-gradient(white, #ECE9E6);
+    overflow-y: auto;
 }
-@media (min-width: 1001px){
-    .AddStory_intro>h3 {
-        font-size: 1.1rem;
-        margin-left: 5px;
-    }
-}
-
 @media (max-width: 500px){
     .AddStory-active {
         width: calc(100% - 30px);
-    }
-}
-@media (max-width: 1000px){
-   .AddStory-active {
-        width: calc(100% - 40px);
-        height: 80vh;
-        background: #ECE9E6;
-        background: linear-gradient(white, #ECE9E6);
-        overflow-y: auto;
-    }
-}
-@media (min-width: 1001px){
-    .AddStory-active {
-        width: 500px;
-        padding-right: 50px;
     }
 }
 
@@ -255,7 +206,7 @@ ul {
 .AddStory-active>.AddStory_intro>svg:first-child {
     align-self: flex-end;
     transform: rotate(45deg);
-    transition: all 0.5s;
+    transition: transform 0.5s;
 }
 
 .AddStory-active>.AddStory_intro>h3 {
@@ -382,18 +333,11 @@ input[type="submit"]:hover {
 .imagery {
     display: none;
 }
-@media (min-width: 1301px){
-    .imagery {
-        grid-columns: 4/5;
-        display: block;
-    }
-    .imagery>img {
-        width: 100%;
-        height: auto;
-        opacity: .3;
-    }
-} 
-
+.imagery>img {
+    width: 100%;
+    height: auto;
+    opacity: .3;
+}
 
 
 /*//Custom*/
@@ -408,4 +352,62 @@ input[type="submit"]:hover {
     #root {
         padding: 0 50px;
     }
+}
+
+/*Grid layout*/
+@supports (grid-area: auto) {
+    
+    .App {
+        display: grid;
+    }
+    
+    @media (max-width: 1000px){
+        .App {
+            grid-template-columns: 1fr;
+        }
+    }
+    @media (min-width: 1001px){
+        .App {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            max-width: none;
+        }
+        .layout-header {
+            grid-column: 1/5;
+        }
+        .Stories {
+            grid-column: 2/4;
+        }
+        
+        /*AddStory*/
+        .AddStory {
+            grid-column: 1/2;
+            margin-top: 50px;
+            height: auto;
+            width: auto;
+            position: inherit;
+            bottom: auto;
+            right: auto;
+            padding: 0;
+            background: transparent;
+            border-radius: 0;
+        }
+        .AddStory_intro {
+            flex-direction: row;
+        }
+        .AddStory_intro>h3 {
+            font-size: 1.1rem;
+            margin-left: 5px;
+        }
+        .AddStory-active {
+            width: 500px;
+            padding-right: 50px;
+        }
+    }
+    @media (min-width: 1301px){
+        .imagery {
+            grid-columns: 4/5;
+            display: block;
+        }
+    }
+    
 }
